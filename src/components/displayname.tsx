@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const DisplayNameWrapper = styled.div<{speaking?: boolean;}>`
-  line-height: 20px;
-  font-size: 16px;
+  line-height: 24px;
+  font-size: 20px;
   font-family: freight-sans-pro,sans-serif;
   font-weight: 600;
   font-style: normal;

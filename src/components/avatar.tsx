@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type AvatarWrapperProps = {
-  speaking?: boolean;
-}
-
 interface AvatarProps {
   avatarUrl: string;
   speaking?: boolean;
 }
 
-const AvatarWrapper = styled.div<AvatarWrapperProps>`
-  width: 36px;
-  height: 36px;
-  background: ${props => props.speaking ? '#ff0070' : 'none'};
+const AvatarBox = styled.div`
+  width: 48px;
+  margin-right: 16px;
+`;
+
+const AvatarRadius = styled.div`
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -21,12 +21,15 @@ const AvatarWrapper = styled.div<AvatarWrapperProps>`
 `;
 
 const Image = styled.div<AvatarProps>`
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
   background: url(${props => props.avatarUrl}) #ff0070;
-  background-size: 32px;
+  background-size: 42px;
   background-position: center;
+  box-sizing: border-box;
+  border: ${props => props.speaking ? '2px solid #2F3337' : 'none'};
+  box-shadow: ${props => props.speaking ? '0 0 0 3px #43B581;' : 'none'};
 `;
 
 export const Avatar = (props: AvatarProps) => {
@@ -36,10 +39,10 @@ export const Avatar = (props: AvatarProps) => {
   } = props;
 
   return (
-    <div style={{ width: 40, marginRight: 16 }}>
-      <AvatarWrapper speaking={speaking} >
-        <Image avatarUrl={avatarUrl} />
-      </AvatarWrapper>
-    </div>
+    <AvatarBox>
+      <AvatarRadius>
+        <Image avatarUrl={avatarUrl} speaking={speaking} />
+      </AvatarRadius>
+    </AvatarBox>
   );
 };

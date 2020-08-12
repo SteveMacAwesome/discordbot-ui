@@ -9,7 +9,7 @@ const UserWrapper = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  height: 40px;
+  height: 50px;
 `;
 
 export interface UserProps {
@@ -34,6 +34,7 @@ export const User = (props: UserProps) => {
     <UserWrapper>
       <Avatar avatarUrl={avatarUrl} speaking={speaking} />
       <DisplayName displayName={displayName} speaking={speaking} />
+      {/* muted/defeaned goes here */}
     </UserWrapper>
   );
 };
