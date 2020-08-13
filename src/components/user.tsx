@@ -30,6 +30,8 @@ export const User = (props: UserProps) => {
     deafened
   } = props;
 
+  console.log(props);
+
   return (
     <UserWrapper>
       <Avatar avatarUrl={avatarUrl} speaking={speaking} />
